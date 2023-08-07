@@ -13,12 +13,19 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
 @RequestMapping("/api/")
 public class AcountController {
     @Autowired
     private AcountService acountService;
 
+
+    @GetMapping("acounts/{id}")
+    public ResponseEntity<AcountNoPassDTO> getById(@PathVariable long id){
+        AcountNoPassDTO acountNoPassDTO = acountService.getById(id);
+        return  new ResponseEntity<>(acountNoPassDTO, HttpStatus.OK);
+    }
 
     @GetMapping("acounts")
     public ResponseEntity<List<AcountDTO>> getAll(){

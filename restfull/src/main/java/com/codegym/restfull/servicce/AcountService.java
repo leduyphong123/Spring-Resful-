@@ -17,4 +17,6 @@ public interface AcountService {
     AcountNoPassDTO edit(long id, AcountNoPassDTO acountNoPassDTO);
 
     boolean delete(long id);
+
+    AcountNoPassDTO getById(long id);
 }
