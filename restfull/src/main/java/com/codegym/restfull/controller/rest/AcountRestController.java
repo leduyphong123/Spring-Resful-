@@ -1,14 +1,12 @@
-package com.codegym.restfull.controller;
+package com.codegym.restfull.controller.rest;
 
 import com.codegym.restfull.dto.AcountDTO;
 import com.codegym.restfull.dto.AcountNoIdDTO;
 import com.codegym.restfull.dto.AcountNoPassDTO;
-import com.codegym.restfull.entity.Acount;
 import com.codegym.restfull.servicce.AcountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,7 +14,7 @@ import java.util.List;
 @CrossOrigin(origins = "http://127.0.0.1:5500")
 @RestController
 @RequestMapping("/api/")
-public class AcountController {
+public class AcountRestController {
     @Autowired
     private AcountService acountService;
 
